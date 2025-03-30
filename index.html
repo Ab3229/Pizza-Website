@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hut - Dark Theme Header</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.rgj4hThojG8TH9Q2bfGNCgHaHk&pid=Api&P=0&h=180" alt="Pizza Hut">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="order-btn">Order Now</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Delicious Pizzas, Hot & Fresh!</h1>
+            <p>Get the tastiest pizzas delivered right to your doorstep. Order now and enjoy mouthwatering flavors!</p>
+            <div class="hero-buttons">
+                <a href="#" class="order-btn">Order Now</a>
+                <a href="#" class="menu-btn">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="features-container">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <img src="https://sp.yimg.com/ib/th?id=OIP.a7fVFIUJm0OwP8n15djp5QHaGo&pid=Api&w=148&h=148&c=7&dpr=2&rs=1" alt="Fast Delivery">
+                <h3>Fast Delivery</h3>
+                <p>Hot & fresh pizza delivered within 30 minutes, guaranteed!</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.IN8P6PywrS-Am3U2iSQlqAHaHa&pid=Api&P=0&h=180" alt="Fresh Ingredients">
+                <h3>Fresh Ingredients</h3>
+                <p>We use only the freshest ingredients for a delicious taste.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U2hqisNZ0zddOfeP2G1OTAHaEo&pid=Api&P=0&h=180" alt="Best Offers">
+                <h3>Best Offers</h3>
+                <p>Exciting deals & discounts available for pizza lovers!</p>
+            </div>
+        </div>
+    </section>
+    <!-- Menu Section -->
+    <section class="menu">
+        <h2 class="section-title">Our Delicious Menu</h2>
+        <div class="menu-container">
+            <!-- Menu Item 1 -->
+            <div class="menu-card">
+                <img src="https://sp.yimg.com/ib/th?id=OIP.VNqU0PWy_grhsRE6zxMRXgHaHE&pid=Api&w=148&h=148&c=7&dpr=2&rs=1" alt="Pepperoni Pizza">
+                <h3>Pepperoni Pizza</h3>
+                <p>Loaded with spicy pepperoni & cheese.</p>
+                <span class="price">$12.99</span>
+            </div>
+
+            <!-- Menu Item 2 -->
+            <div class="menu-card">
+                <img src="https://up.yimg.com/ib/th?id=OIP.zq-3BhvlBu1kmoUqwC4u2gHaJ4&pid=Api&rs=1&c=1&qlt=95&w=82&h=109" alt="Veggie Pizza">
+                <h3>Veggie Pizza</h3>
+                <p>Fresh veggies with a cheesy delight.</p>
+                <span class="price">$10.99</span>
+            </div>
+
+            <!-- Menu Item 3 -->
+            <div class="menu-card">
+                <img src="https://up.yimg.com/ib/th?id=OIP.T03aJagv5g4JwoG0Di4gFwHaEb&pid=Api&rs=1&c=1&qlt=95&w=169&h=101" alt="BBQ Chicken Pizza">
+                <h3>BBQ Chicken Pizza</h3>
+                <p>Smoky BBQ sauce with grilled chicken.</p>
+                <span class="price">$13.99</span>
+            </div>
+        </div>
+    </section>
+ <!-- Limited Time Offer Section -->
+ <section class="limited-time">
+    <h2 class="section-title">🔥 Limited Time Offer! 🔥</h2>
+    <p class="offer-text">Get 50% off on your favorite pizza. Hurry up!</p>
+    <div id="countdown" class="countdown-timer"></div>
+    <a href="#" class="order-btn">Order Now</a>
+</section>
+
+<script>
+    // Countdown Timer Script
+    function startCountdown(durationInSeconds) {
+        const countdownElement = document.getElementById("countdown");
+        let timeLeft = durationInSeconds;
+
+        function updateCountdown() {
+            let hours = Math.floor(timeLeft / 3600);
+            let minutes = Math.floor((timeLeft % 3600) / 60);
+            let seconds = timeLeft % 60;
+
+            countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                countdownElement.innerHTML = "Offer Expired!";
+            }
+        }
+        updateCountdown();
+    }
+
+    // Start countdown for 24 hours (86400 seconds)
+    startCountdown(86400);
+</script>
+ <!-- Delivery & Location Section -->
+ <section class="delivery-location">
+    <h2 class="section-title">🚚 Delivery & Location 📍</h2>
+    
+    <div class="container">
+        <!-- Delivery Info -->
+        <div class="delivery-info">
+            <h3>Fast & Hot Delivery!</h3>
+            <p>Get your favorite pizza delivered within **30 minutes** anywhere in the city.</p>
+            <ul>
+                <li>✅ Free Delivery on orders above **$20**</li>
+                <li>✅ Live Order Tracking Available</li>
+                <li>✅ Multiple Payment Options</li>
+            </ul>
+            <a href="#" class="order-btn">Order Now</a>
+        </div>
+
+        <!-- Location Map -->
+        <div class="location-map">
+            <h3>Find Us Here:</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113349.64393515407!2d76.88416850826232!3d26.493356734081755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3971eb8ebeb7d3c7%3A0x7a3fc5e0db3b689d!2sKarauli%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1711794378001!5m2!1sen!2sin"" 
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+<!-- Customer Review Section -->
+<section class="reviews">
+    <h2 class="section-title">💬 What Our Customers Say</h2>
+    
+    <div class="review-container">
+        <!-- Review 1 -->
+        <div class="review-card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.6gekVuY-bfZ-mcqjMY7_agHaOj&pid=Api&P=0&h=180" alt="Customer 1">
+            <h3>Chetan Gupta</h3>
+            <p>"Best pizza ever! Crispy, cheesy, and full of flavor. Will definitely order again!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.45CYCg88KyfGFsSYQGWh6wHaJw&pid=Api&P=0&h=180" alt="Customer 2">
+            <h3>Bhavesh Manat</h3>
+            <p>"Fast delivery and delicious pizza. The Pepperoni Special is my favorite!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.v4QJY-R0ju-yk45a6tM_OgHaJH&pid=Api&P=0&h=180" alt="Customer 3">
+            <h3>Rajendra pandey</h3>
+            <p>"Great customer service and fresh ingredients. The Chicken Pizza is amazing!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us Section -->
+<section class="contact-us">
+    <h2 class="section-title">📞 Contact Us</h2>
+    
+    <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Visit Us</h3>
+            <p>📍 karauli, rajasthan</p>
+            <p>📞 +91 7340173229</p>
+            <p>📧 abhishekagrawal1234@gmil.com</p>
+            <p>🕒 Open Hours: 10:00 AM - 11:00 PM</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+            <h2>🍕 Pizza Hut</h2>
+            <p>The best pizza in town, delivered hot & fresh!</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Order Online</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>📍 karauli,rajasthan</p>
+            <p>📞 7340173229</p>
+            <p>📧 abhishekagrawal1234@gmail.com</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><img src="https://tse3.mm.bing.net/th?id=OIP.g-PMKXEGdnEU8sBg9_X8uwHaHa&pid=Api&P=0&h=180" alt="Facebook"></a>
+                <a href="#"><img src="https://up.yimg.com/ib/th?id=OIP.shMLwGIsbDrfGhWzmHp0mQHaF7&pid=Api&rs=1&c=1&qlt=95&w=144&h=115" alt="Instagram"></a>
+                <a href="#"><img src="https://up.yimg.com/ib/th?id=OIP.H836RvDYYgQZcZn0TC8qBAHaHa&pid=Api&rs=1&c=1&qlt=95&w=121&h=121" alt="Twitter"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Pizza Hut. All rights reserved.</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="style.css">
+</body>
+</html>
+
+
+
+
+
+
